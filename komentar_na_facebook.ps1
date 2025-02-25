@@ -1,6 +1,6 @@
 ﻿cls
 # nasrat na facebooku
-[string] $text = Read-Host -Prompt "zadej text"
+[string] $text = Read-Host -Prompt "zadej text, muze byt i z diakritikou"
 
 #$text = "čuráku"
 $file_output = $text + ".txt"
