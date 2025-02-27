@@ -15,6 +15,7 @@ $d_maska = $maska.Length-1
 #echo $d_maska
 
 $pole_out = @()
+$mezera = "   " # pridany nove 27.2.2025
 
 for ($opakuj = 1; $opakuj -le 10; $opakuj++){
 
@@ -48,7 +49,7 @@ $rnd_zpusob = Get-Random -Minimum 1 -Maximum 5
 if ( $rnd_zpusob -eq  1 ){
 #echo "zde-1"
 $rnd_od_kraje = Get-Random -Minimum 0 -Maximum 10
-
+$pole_out += $mezera # 27.2.2025
 for ($bb = 0; $bb -le $d_text; $bb++){
 [string] $znak = $text[$bb]
 #echo $znak"<"
@@ -57,7 +58,7 @@ $radek += $znak
 
 $rnd_do_konce = Get-Random -Minimum 0 -Maximum $d_maska # tady vzdy jina delka
 $radek += $maska.Substring(0,$rnd_do_konce)
-#$radek += "." # aby bylo videk konec radku
+#$radek += "." # aby bylo videt konec radku
 $pole_out += $radek
 }
 }
@@ -68,7 +69,7 @@ if ( $rnd_zpusob -eq 2 ){
 #echo "zde-2"
 $poc_2 = 1
 $rnd_od_kraje = Get-Random -Minimum 0 -Maximum 10
-
+$pole_out += $mezera # 27.2.2025
 for ($cc = 0; $cc -le $d_text; $cc++){
 [string] $znak = $text[$cc]
 #echo $znak"<"
@@ -79,7 +80,7 @@ $radek += $znak
 
 $rnd_do_konce = Get-Random -Minimum 0 -Maximum $d_maska # tady vzdy jina delka
 $radek += $maska.Substring(0,$rnd_do_konce)
-#$radek += "." # aby bylo videk konec radku
+#$radek += "." # aby bylo videt konec radku
 $pole_out += $radek
 }
 }
@@ -92,6 +93,7 @@ $poc_3 = 1
 #$rnd_od_kraje = 10
 #$rnd_od_kraje = Get-Random -Minimum $d_text -Maximum (( $d_text + Get-Random -Minimum 1 -Maximum 10  ))
 $rnd_od_kraje = Get-Random -Minimum $d_text -Maximum (( $d_text + 10 ))
+$pole_out += $mezera # 27.2.2025
 for ($dd = 0; $dd -le $d_text; $dd++){
 [string] $znak = $text[$dd]
 
@@ -101,7 +103,7 @@ $poc_3++
 $radek += $znak
 $rnd_do_konce = Get-Random -Minimum 0 -Maximum $d_maska # tady vzdy jina delka
 $radek += $maska.Substring(0,$rnd_do_konce)
-#$radek += "." # aby bylo videk konec radku
+#$radek += "." # aby bylo videt konec radku
 $pole_out += $radek
 }
 }
@@ -112,6 +114,7 @@ if ( $rnd_zpusob -eq 4 ){
 #echo "zde-4"
 $rnd_od_kraje = Get-Random -Minimum 5 -Maximum 10
 #Get-Random -Minimum -1 -Maximum 2
+$pole_out += $mezera # 27.2.2025
 for ($ee = 0; $ee -le $d_text; $ee++){
 [string] $znak = $text[$ee]
 $radek = $maska.Substring(0,$rnd_od_kraje)
@@ -139,7 +142,7 @@ $radek += $maska.Substring( 0,$rnd_od_kraje + $rnd_2 )
 $radek += $znak
 $rnd_do_konce = Get-Random -Minimum 0 -Maximum $d_maska # tady vzdy jina delka
 $radek += $maska.Substring(0,$rnd_do_konce)
-#$radek += "." # aby bylo videk konec radku
+#$radek += "." # aby bylo videt konec radku
 $pole_out += $radek
 }
 }
